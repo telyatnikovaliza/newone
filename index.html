@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кристальный Прыжок - Platformer Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+        
+        <!-- Menu Screen -->
+        <div id="menu" class="screen">
+            <div class="menu-content">
+                <h1 class="game-title">Кристальный Прыжок</h1>
+                <p class="game-subtitle">Собирайте кристаллы и побеждайте врагов!</p>
+                <button id="startBtn" class="btn-primary">Начать игру</button>
+                <div class="controls-info">
+                    <p><strong>Управление:</strong></p>
+                    <p>A/D или ← → - Движение</p>
+                    <p>W или Space - Прыжок</p>
+                    <p>ESC - Пауза</p>
+                    <p>R - Рестарт</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pause Screen -->
+        <div id="pauseScreen" class="screen hidden">
+            <div class="menu-content">
+                <h1 class="game-title">Пауза</h1>
+                <p class="game-subtitle">Игра приостановлена</p>
+                <button id="resumeBtn" class="btn-primary">Продолжить</button>
+                <button id="pauseRestartBtn" class="btn-secondary">Рестарт</button>
+                <div class="controls-info">
+                    <p>ESC - Продолжить игру</p>
+                    <p>R - Рестарт уровня</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameOver" class="screen hidden">
+            <div class="menu-content">
+                <h1 class="game-title">Игра окончена</h1>
+                <p id="finalScore" class="game-subtitle"></p>
+                <button id="restartBtn" class="btn-primary">Играть снова</button>
+            </div>
+        </div>
+
+        <!-- Victory Screen -->
+        <div id="victory" class="screen hidden">
+            <div class="menu-content">
+                <h1 class="game-title">Победа!</h1>
+                <p id="victoryScore" class="game-subtitle"></p>
+                <button id="playAgainBtn" class="btn-primary">Играть снова</button>
+            </div>
+        </div>
+
+        <!-- HUD -->
+        <div id="hud" class="hidden">
+            <div class="hud-left">
+                <div class="hud-item">
+                    <span class="hud-label">Уровень:</span>
+                    <span id="levelDisplay" class="hud-value">1</span>
+                </div>
+                <div class="hud-item">
+                    <span class="hud-label">Кристаллы:</span>
+                    <span id="crystalCount" class="hud-value">0</span>
+                </div>
+            </div>
+            <div class="hud-right">
+                <div id="hearts" class="hearts"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Attribution -->
+    <div class="ai-info">
+        <p><strong>Создано с помощью:</strong> v0.dev (AI)</p>
+        <p><strong>Время разработки:</strong> ~30 минут</p>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
